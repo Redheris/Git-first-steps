@@ -2,12 +2,14 @@
 
 using namespace std;
 
-int fib (int n){
-	if (n == 0)
-		return 0;
-	if (n == 1)
-		return 1;
-	return fib(n - 1) + fib(n - 2);
+void fib (int n){
+	int a = 0, b = 1;
+	for (int i = 0; i < n; ++i){
+		cout << a << endl;
+		int t = b;
+		b += a;
+		a = t;
+	}
 }
 
 int main(){
@@ -16,5 +18,5 @@ int main(){
 	cout << "Hello, World!" << endl;
 
 	cout << "n = "; cin >> n;
-	cout << "Fib(" << n << ") = " << fib(n-1) << endl;
+	fib(n);
 }
